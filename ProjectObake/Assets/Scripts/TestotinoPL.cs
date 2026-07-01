@@ -3,28 +3,35 @@ using Unity.Netcode;
 using UnityEngine;
 
 public class TestotinoPL : MonoBehaviour
+
+
 {
-   
-
-    public float m_moveSpeed = 1;
-
-    private Rigidbody m_rigidBody;
+    public float moveSpeed = 5f; // 移動速度
+    private Rigidbody rb;
+    private Vector3 movement;
 
     void Start()
     {
-        m_rigidBody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody がアタッチされていません。");
+        }
     }
 
-    // 物理演算なので FixedUpdate を使用
-    private void FixedUpdate()
+    void Update()
     {
-       
-            float x = Input.GetAxisRaw("Horizontal");
-            float y = Input.GetAxisRaw("Vertical");
-            var velocity = Vector3.zero;
-            velocity.x = m_moveSpeed * x;
-            velocity.y = m_moveSpeed * y;
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-      
+        movement = new Vector3(moveX, moveY, 0f).normalized;
+    }
+
+    void FixedUpdate()
+    {
+        if (rb != null)
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 }
