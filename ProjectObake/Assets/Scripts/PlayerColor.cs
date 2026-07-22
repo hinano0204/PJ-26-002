@@ -6,8 +6,8 @@ public class PlayerColor : NetworkBehaviour
     // 割り当てる4色を配列で準備（インデックス 0=赤, 1=青, 2=緑, 3=黄）
     private Color[] m_playerColors = new Color[]
     {
-        Color.red,
-        Color.blue,
+        Color.white,
+        Color.black,
         Color.green,
         Color.yellow
     };
