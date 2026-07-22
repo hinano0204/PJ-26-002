@@ -1444,6 +1444,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &2056676415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1547,77 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+=======
+--- !u!1001 &2005213946
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693098011270935857, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772297669881435045, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3824147867
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772297669881435045, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772297669881435045, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 904059755
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653326657444894945, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd3c96fb49c89e34caf05e9740b8e5da, type: 3}
+>>>>>>> e2f7578 (Add.EnemyTimerは使わんかも。それ以外は使えます)
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1561,6 +1633,10 @@ SceneRoots:
   - {fileID: 1889847717}
   - {fileID: 1778217057}
   - {fileID: 1544931010}
+<<<<<<< HEAD
   - {fileID: 2056676419}
   - {fileID: 1519201333}
   - {fileID: 1195043652}
+=======
+  - {fileID: 2005213946}
+>>>>>>> e2f7578 (Add.EnemyTimerは使わんかも。それ以外は使えます)
