@@ -14,7 +14,7 @@ public class EnemySpawner : NetworkBehaviour
 
         // 3秒経過ごとに敵を出す処理
         timer += Time.deltaTime;
-        if (timer > 3.0f)
+        if (timer >3.0f)
         {
             timer = 0f;
             SpawnEnemy();
@@ -25,6 +25,14 @@ public class EnemySpawner : NetworkBehaviour
     {
         // 1. まずは普通のUnityと同じように作る（この時点では自分のPCにしか存在しない）
         Vector3 pos = new Vector3(Random.Range(-9.25f, 9.25f), Random.Range(-5.25f, 5.25f), 0);
+        if (pos.x > 3.7f && pos.x < 3.7f&&(pos.y>4.25f||pos.y<-4.25f)) 
+        { pos.x=Random.Range(-9.25f, 9.25f);
+          pos.y = Random.Range(-5.25f, 5.25f);
+
+            return;
+        };
+
+
         GameObject go = Instantiate(enemyPrefab, pos, Quaternion.identity);
 
         // 2. 【NGO特有】これをネットワーク全体に「公開」する！
