@@ -23,14 +23,26 @@ public class EnemySpawner : NetworkBehaviour
 
     void SpawnEnemy()
     {
+        Debug.Log("uuuu");
         // 1. ‚Ü‚¸‚Í•’Ê‚ÌUnity‚Æ“¯‚¶‚æ‚¤‚Éì‚éi‚±‚ÌŽž“_‚Å‚ÍŽ©•ª‚ÌPC‚É‚µ‚©‘¶Ý‚µ‚È‚¢j
+        //Vector2 random = Random.insideUnitCircle * 4f; // ”¼Œa4
+
+        //Vector3 pos = new Vector3(random.x, random.y, 0);
+
         Vector3 pos = new Vector3(Random.Range(-9.25f, 9.25f), Random.Range(-5.25f, 5.25f), 0);
-        if (pos.x > 3.7f && pos.x < 3.7f&&(pos.y>4.25f||pos.y<-4.25f)) 
-        { pos.x=Random.Range(-9.25f, 9.25f);
-          pos.y = Random.Range(-5.25f, 5.25f);
+        if (pos.x > 3.7f && pos.x < 3.7f && (pos.y > 4.25f || pos.y < -4.25f))
+        {
+            pos.x = Random.Range(-9.25f, 9.25f);
+            pos.y = Random.Range(-5.25f, 5.25f);
+            pos.z = 0;
+
+
 
             return;
-        };
+        }
+        ;
+
+
 
 
         GameObject go = Instantiate(enemyPrefab, pos, Quaternion.identity);
