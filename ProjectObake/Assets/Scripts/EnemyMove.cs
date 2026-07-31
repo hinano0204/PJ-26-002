@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
-[RequireComponent(typeof(NavMeshAgent))]
+//[RequireComponent(typeof(NavMeshAgent))]
 
 public class EnemyMove : NetworkBehaviour
 {
@@ -10,7 +10,9 @@ public class EnemyMove : NetworkBehaviour
     public Transform player;
     public float speed = 5f;
     public GameObject Enemy;
-    private int count;
+    public float avoidDistance = 2f;
+    public float rayDistance = 1f;
+    //private int count;
 
     private void Start()
     {
@@ -20,16 +22,12 @@ public class EnemyMove : NetworkBehaviour
     }
     void Update()
     {
-        //count += 1;
-        //Debug.Log("カウント" + count);
-        //if(count < 5)
-        //{
-        //    Enemy.SetActive(true);
-        //}
+        
         Enemy.SetActive(true);
         Vector3 pos = transform.position;
-
-        if (player.position.x > pos.x)
+        Vector3 targetpos = player.position;
+        Vector3 dir = (targetpos - pos).normalized;
+        if (targetpos.x > pos.x)
         {
             pos.x += speed * Time.deltaTime;
         }
@@ -41,15 +39,45 @@ public class EnemyMove : NetworkBehaviour
         transform.position = pos;
 
         RaycastHit hit;
+        
 
-        if (Physics.Raycast(transform.position,
-            transform.right,
-            out hit,
-            1f))
+        if (Physics.Raycast(transform.position,dir,out hit,rayDistance))   
         {
             // 障害物発見
+            //上いける？
+            bool canGoUp = !Physics.Raycast
+                (
+                transform.position,
+                Vector3.up,
+                avoidDistance
+                );
+
+            //下いける？
+            bool canGoDoun = !Physics.Raycast
+                (
+                transform.position,
+                Vector3.down,
+                avoidDistance
+                );
+             
+            if(canGoUp)
+            {
+                targetpos = transform.position + Vector3.up * avoidDistance;
+            }
+
+            else if(canGoDoun)
+            {
+                targetpos = transform.position + Vector3.down * avoidDistance;
+            }
         }
 
+        transform.position =
+            Vector3.MoveTowards
+            (
+                transform.position,
+                targetpos,
+                speed * Time.deltaTime
+            );
     }
 
 }
